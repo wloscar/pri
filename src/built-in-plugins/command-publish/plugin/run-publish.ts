@@ -96,14 +96,26 @@ export const publish = async (options: PublishOption) => {
   options.exitAfterPublish && process.exit(0);
 };
 
-async function authPublish(packageNames: string[]) {
-  let name: string;
+const nameMap: {
+  [key: string]: string;
+} = {};
+
+function whoami(npmClient = 'tnpm') {
+  if (nameMap[npmClient]) {
+    return nameMap[npmClient];
+  }
+
   try {
-    const nameRet = execSync('tnpm whoami');
-    name = nameRet.toString().trim();
+    const nameRet = execSync(`${npmClient} whoami`);
+    const name = nameRet.toString().trim();
+    nameMap[npmClient] = name;
+    return name;
   } catch (error) {
     logFatal(error);
   }
+}
+
+async function authPublish(packageNames: string[]) {
   const failedPkgSet = new Set<string>();
   const checkOwner = (uName: string, pName: string) =>
     new Promise((res, rej) => {
@@ -116,7 +128,14 @@ async function authPublish(packageNames: string[]) {
         })
         .catch(e => rej(e));
     });
-  const pkgsP = packageNames.map(p => checkOwner(name, p));
+  const pkgsP = packageNames.map(p => {
+    const npmClient =
+      p === 'root'
+        ? pri.projectConfig?.npmClient
+        : pri.packages.find(eachPackage => eachPackage.name === p)?.config?.npmClient;
+
+    return checkOwner(whoami(npmClient), p);
+  });
   await Promise.all(pkgsP);
   if (failedPkgSet.size > 0) {
     logFatal(`Permission error: need ownership to publish these packages. \n ${Array.from(failedPkgSet).join('\n')}`);
@@ -493,7 +512,7 @@ async function buildDeclaration() {
   await spinner(`create declaration`, async () => {
     try {
       await exec(
-        `npx tsc --declaration --declarationDir ${path.join(
+        `node --max-old-space-size=16384  ./node_modules/typescript/bin/tsc --declaration --declarationDir ${path.join(
           pri.projectRootPath,
           `./${tempPath.dir}/${declarationPath.dir}`,
         )} --emitDeclarationOnly >> /dev/null 2>&1`,
