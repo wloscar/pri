@@ -1,5 +1,5 @@
-<a name="4.2.1"></a>
-## [4.2.1](https://github.com/prijs/pri/compare/3.3.28-beta.5...4.2.1) (2020-10-01)
+<a name="4.2.4-beta.2"></a>
+## [4.2.4-beta.2](https://github.com/prijs/pri/compare/3.3.28-beta.5...4.2.4-beta.2) (2020-11-06)
 
 
 ### Bug Fixes
@@ -8,9 +8,9 @@
 * add prettier format to lint ([d6f8261](https://github.com/prijs/pri/commit/d6f8261))
 * auth selected package ([6987871](https://github.com/prijs/pri/commit/6987871))
 * autofix package.version while betaBranch ([596b803](https://github.com/prijs/pri/commit/596b803))
-* bug ([3510f52](https://github.com/prijs/pri/commit/3510f52))
 * bug ([c37b05b](https://github.com/prijs/pri/commit/c37b05b))
 * bug ([b65ab71](https://github.com/prijs/pri/commit/b65ab71))
+* bug ([3510f52](https://github.com/prijs/pri/commit/3510f52))
 * correct module type ([a088f61](https://github.com/prijs/pri/commit/a088f61))
 * correct module type ([027bd79](https://github.com/prijs/pri/commit/027bd79))
 * deps analysis add react-router-dom ([0148632](https://github.com/prijs/pri/commit/0148632))
@@ -25,10 +25,10 @@
 * nested node_modules ([8e79cce](https://github.com/prijs/pri/commit/8e79cce))
 * npm test support packages alias name ([7bacda9](https://github.com/prijs/pri/commit/7bacda9))
 * npx ([18e799c](https://github.com/prijs/pri/commit/18e799c))
-* publish error ([c813439](https://github.com/prijs/pri/commit/c813439))
 * publish error ([594cec5](https://github.com/prijs/pri/commit/594cec5))
-* publish error ([f215748](https://github.com/prijs/pri/commit/f215748))
 * publish error ([d06c26e](https://github.com/prijs/pri/commit/d06c26e))
+* publish error ([c813439](https://github.com/prijs/pri/commit/c813439))
+* publish error ([f215748](https://github.com/prijs/pri/commit/f215748))
 * rebase error ([2fc0d6f](https://github.com/prijs/pri/commit/2fc0d6f))
 * rebuild dll when extraVendors changed or project changed ([45f2f36](https://github.com/prijs/pri/commit/45f2f36))
 * rebuild dll when extraVendors changed or project changed ([40a3c21](https://github.com/prijs/pri/commit/40a3c21))
@@ -41,6 +41,7 @@
 * use sync mode when process.stdio is connected to pipe ([9eb7a50](https://github.com/prijs/pri/commit/9eb7a50))
 * 修复组件编译模式无差别产生 sourcemap ([06a444f](https://github.com/prijs/pri/commit/06a444f))
 * 更新发布方式 ([110130b](https://github.com/prijs/pri/commit/110130b))
+* 解决pri打包问题 ([a1e5e94](https://github.com/prijs/pri/commit/a1e5e94))
 
 
 ### Features
@@ -49,6 +50,7 @@
 * add babelPluginReactWrappedDisplayName ([6dd820e](https://github.com/prijs/pri/commit/6dd820e))
 * add changeLog to publish script ([66526f7](https://github.com/prijs/pri/commit/66526f7))
 * add ensure files config ([2e78cc5](https://github.com/prijs/pri/commit/2e78cc5))
+* add esm5 field ([8e20b94](https://github.com/prijs/pri/commit/8e20b94))
 * add hotLoader option ([52c8bdb](https://github.com/prijs/pri/commit/52c8bdb))
 * add hotLoader option ([ceb6f48](https://github.com/prijs/pri/commit/ceb6f48))
 * add jest react babel support ([949d38f](https://github.com/prijs/pri/commit/949d38f))

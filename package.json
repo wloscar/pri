@@ -1,6 +1,6 @@
 {
   "name": "pri",
-  "version": "4.2.4-beta.1",
+  "version": "4.2.4-beta.2",
   "types": "src/node/index.ts",
   "main": "built/node/index.js",
   "scripts": {
@@ -21,6 +21,9 @@
   },
   "bin": {
     "pri": "built/bin.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
