@@ -1,5 +1,5 @@
-<a name="4.2.0-beta.10"></a>
-# [4.2.0-beta.10](https://github.com/prijs/pri/compare/3.3.28-beta.5...4.2.0-beta.10) (2020-09-08)
+<a name="4.2.0-beta.11"></a>
+# [4.2.0-beta.11](https://github.com/prijs/pri/compare/3.3.28-beta.5...4.2.0-beta.11) (2020-10-13)
 
 
 ### Bug Fixes
@@ -39,6 +39,7 @@
 * update ([722c764](https://github.com/prijs/pri/commit/722c764))
 * use sync mode when process.stdio is connected to pipe ([9eb7a50](https://github.com/prijs/pri/commit/9eb7a50))
 * 修复组件编译模式无差别产生 sourcemap ([06a444f](https://github.com/prijs/pri/commit/06a444f))
+* 更新发布方式 ([110130b](https://github.com/prijs/pri/commit/110130b))
 
 
 ### Features
